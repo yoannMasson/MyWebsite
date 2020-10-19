@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; overflow: hidden;}
+			canvas { display: block; }
+			input { margin-left: 10%; max-height: 2rem; }
+			.user-input { display: flex; justify-content: flex-start; align-items: center;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="user-input">
+			<input id="test-input" type="text "class="input_word" onkeypress="rafraichitText()"/>
+		</div>
+		<script src="js/three.js"></script>
+		<script>
+
+			var text = "texte de base";
+			function rafraichitText() {
+				var input = document.getElementById("test-input");
+				text = input.value;
+			}
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry ;
+
+			var loader = new THREE.FontLoader();
+			loader.load( 'fonts/gentilis_bold.typeface.json', function ( font ) {
+
+				geometry = new THREE.TextGeometry( text, {
+					font: font,
+					size: 80,
+					height: 5,
+					curveSegments: 12,
+					bevelEnabled: true,
+					bevelThickness: 10,
+					bevelSize: 8,
+					bevelOffset: 0,
+					bevelSegments: 5
+				} );
+			} );
+
+			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			var text3d = new THREE.Mesh( geometry, material );
+			var boxGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1 );
+			var materialForBoxe = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+			var cube = new THREE.Mesh( boxGeometry, materialForBoxe );
+			var edges = new THREE.EdgesGeometry( boxGeometry );
+			var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+			scene.add( line );
+			scene.add( cube );
+			scene.add(text3d);
+			camera.position.z = 5;
+			camera.position.x = 5;
+
+			function animate() {
+				line.rotation.x += 0.01;
+				line.rotation.y += 0.01;
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+				requestAnimationFrame( animate );
+				renderer.render( scene, camera );
+			}
+			animate();
+			
+		</script> 
+	</body>
+</html>
