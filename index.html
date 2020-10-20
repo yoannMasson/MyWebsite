@@ -1,75 +1,41 @@
-<html>
-	<head>
-		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; overflow: hidden;}
-			canvas { display: block; }
-			input { margin-left: 10%; max-height: 2rem; }
-			.user-input { display: flex; justify-content: flex-start; align-items: center;}
-			
-		</style>
-	</head>
-	<body>
-		<div class="user-input">
-			<input id="test-input" type="text "class="input_word" onkeypress="rafraichitText()"/>
-		</div>
-		<script src="js/three.js"></script>
-		<script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="src/css/MyStyle.css">
+    <!-- Compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     Compiled and minified JavaScript 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>      -->
+    <title>Yoann Masson</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    
+    <div class="top-panel" id="top-panel">
+      <h2 class="cols12">Yoann Masson</h2>
+      <h3>Développeur Full-Stack</h3>
+      <span class="opening-page-img"><img id="moi" src="../img/PHOTO_Rond.png"></span>
+    </div>
 
-			var text = "texte de base";
-			function rafraichitText() {
-				var input = document.getElementById("test-input");
-				text = input.value;
-			}
+    <div class="second-panel"></div>
 
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    <div class="bottom-panel" id="bottom-panel">
+      <div class="info"><h2>Info1</h2></div>
+      <div class="info"><h2>Info2</h2></div>
+      <div class="info"><h2>Info3</h2></div>
+    </div>
 
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
+    <script>
+      var collapsible = ["top-panel","bottom-panel"];
+      //Any collapsible collapses all the other
+      document.body.addEventListener('click', hideCollapsible, true); 
 
-			var geometry ;
-
-			var loader = new THREE.FontLoader();
-			loader.load( 'fonts/gentilis_bold.typeface.json', function ( font ) {
-
-				geometry = new THREE.TextGeometry( text, {
-					font: font,
-					size: 80,
-					height: 5,
-					curveSegments: 12,
-					bevelEnabled: true,
-					bevelThickness: 10,
-					bevelSize: 8,
-					bevelOffset: 0,
-					bevelSegments: 5
-				} );
-			} );
-
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var text3d = new THREE.Mesh( geometry, material );
-			var boxGeometry = new THREE.BoxGeometry( 1, 1, 1, 1, 1, 1 );
-			var materialForBoxe = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-			var cube = new THREE.Mesh( boxGeometry, materialForBoxe );
-			var edges = new THREE.EdgesGeometry( boxGeometry );
-			var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
-			scene.add( line );
-			scene.add( cube );
-			scene.add(text3d);
-			camera.position.z = 5;
-			camera.position.x = 5;
-
-			function animate() {
-				line.rotation.x += 0.01;
-				line.rotation.y += 0.01;
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-				requestAnimationFrame( animate );
-				renderer.render( scene, camera );
-			}
-			animate();
-			
-		</script> 
-	</body>
+      function hideCollapsible() {
+        document.getElementById("top-panel").classList.add("hidden");
+        document.getElementById("bottom-panel").classList.add("hidden");
+      }
+    </script>
+  </body>
 </html>
