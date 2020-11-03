@@ -1,36 +1,55 @@
 body {
     margin: 0px;
     padding: 0px;
+    min-height: 100vh;
+    min-width: 100ch;
     background-color: white ;
     align-content: center;
     overflow: hidden;
     
 }
 
-h2 {
+h1 {
     color: white;
-    font-family: 'Gill Sans,Gill Sans MT,Calibri,sans-serif';
+    font-family: 'Roboto';
+    margin-bottom: 0;
 }
 
-.top-panel {
+h2 {
+    color: white;
+    font-family: 'Roboto';
+}
+
+.top-panel-container {
     position: absolute;
+    pointer-events: ;
     top: 0;
     left: 0;
     height: 48%;
     width: 100%;
-    background-color: gray;
     transition: 2s ease;
+}
+.top-panel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.top-panel.hidden {
-    transform: translateY(-100%);
+.top-panel-container.hidden {
+    transform: translateY(-200%);
+ }
+
+ h1 {
+     font-family: 'roboto';
  }
 
 .bottom-panel {
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding-left: auto;
@@ -41,8 +60,19 @@ h2 {
     left: 0;
     height: 48%;
     width: 100%;
-    background-color: rgba(141, 88, 18, 0.815);
-   
+    background-color: #83ee00;
+    background-image: linear-gradient(315deg, #172a38 0%, #09203f 74%);
+}
+
+.particules-js {
+    pointer-events: all;
+
+    width: 100%;
+    z-index: 101;
+    height: 100%;
+    background-color: #ff4e00;
+    background-size: cover;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
 }
 .bottom-panel.hidden {
     transform: translateY(100%);
@@ -65,15 +95,11 @@ h2 {
     height: auto;
 }
 
-
 .info {
-    width: 250px;
+    min-width: 250px;
     height: 250px;
     background-color: red;
 }
 
-.opening-page-img {
-    width: fit-content;
-}
 
 
