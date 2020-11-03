@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="src/css/MyStyle.css">
+    <link rel="stylesheet" href="src/css/cursor.css">
+    <link rel="stylesheet" href="src/css/collapsible.css">
     <!-- Compiled and minified CSS -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      Compiled and minified JavaScript 
@@ -13,9 +15,9 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    
+    <div class="cursor" id="cursor"></div>
     <div class="top-panel-container"  id="top-panel">
-      <!-- <div id="particles-js"></div>  -->
+      <div id="particles-js"></div>  
       <div class="top-panel">
         <h1>Yoann Masson</h1>
         <h2>Développeur Full-Stack</h2>
@@ -44,9 +46,16 @@
       document.body.addEventListener('click', hideCollapsible, true); 
 
       function hideCollapsible() {
-        document.getElementById("top-panel").classList.add("hidden");
-        document.getElementById("bottom-panel").classList.add("hidden");
+        collapsible.map( collapsible => {
+          document.getElementById(collapsible).classList.add("hidden");
+        })
       }
+
+      const cursor = document.getElementById('cursor');
+      document.addEventListener('mousemove', e => {
+        cursor.style.top = e.pageY + "px";
+        cursor.style.left = e .pageX + "px";
+      })
     </script>
   </body>
 </html>

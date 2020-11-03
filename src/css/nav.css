@@ -1,0 +1,13 @@
+.nav_header {
+    display: flex;
+    flex-direction: column;
+    transition: all 1s;
+}
+
+.nav_header:hover {
+    background-color: beige;
+}
+
+.nav_header img {
+    max-width: 300px;
+}

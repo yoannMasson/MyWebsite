@@ -6,7 +6,7 @@ body {
     background-color: white ;
     align-content: center;
     overflow: hidden;
-    
+    cursor: none;
 }
 
 h1 {
@@ -19,82 +19,6 @@ h2 {
     color: white;
     font-family: 'Roboto';
 }
-
-.top-panel-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 48%;
-    width: 100%;
-    transition: 2s ease;
-    background-color: transparent;
-}
-.top-panel {
-    position: absolute;
-    height: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ff4e00;
-    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
-
-}
-.top-panel-container.hidden {
-    transform: translateY(-200%);
- }
-
- h1 {
-     font-family: 'roboto';
- }
-
-.bottom-panel {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: auto;
-    padding-right: auto;
-    transition: 2s ease;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 48%;
-    width: 100%;
-    background-color: #83ee00;
-    background-image: linear-gradient(315deg, #172a38 0%, #09203f 74%);
-}
-
-
-.particules-js {
-    pointer-events: all;
-    position: absolute;
-    width: 100%;
-    z-index: 101;
-    height: 100%;
-    overflow: hidden;
-    background-color: transparent;
-    background-size: cover;
-    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
-}
-.bottom-panel.hidden {
-    transform: translateY(100%);
- }
-
- .second-panel {
-     position: absolute;
-     z-index: 0;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: aquamarine;
-     opacity: 0;
-     pointer-events: none;
- }
 
  #moi {
     max-width: 300px;

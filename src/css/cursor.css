@@ -1,0 +1,17 @@
+.cursor {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 1000;
+    background-color: transparent;
+    border: 3px solid black;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+}
+
+.cursor.active {
+    height: 30px;
+    width: 30px;
+    border-color: #ff4e00;
+}
