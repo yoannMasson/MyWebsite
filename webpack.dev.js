@@ -5,7 +5,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   mode: 'development',
   devServer: {
-    contentBase: './front/templates',
+    contentBase: './templates',
     port: '9000'
   }
 

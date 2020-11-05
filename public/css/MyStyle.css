@@ -3,20 +3,20 @@ body {
     padding: 0px;
     min-height: 100vh;
     min-width: 100ch;
-    background-color: white ;
+    background-color: rgb(153, 152, 152) ;
     align-content: center;
     overflow: hidden;
     cursor: none;
 }
 
 h1 {
-    color: white;
+    color: whitesmoke;
     font-family: 'Roboto';
     margin-bottom: 0;
 }
 
 h2 {
-    color: white;
+    color: whitesmoke;
     font-family: 'Roboto';
 }
 

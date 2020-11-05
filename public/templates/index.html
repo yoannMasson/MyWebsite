@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/MyStyle.css">
-    <link rel="stylesheet" href="css/cursor.css">
-    <link rel="stylesheet" href="css/collapsible.css">
+
     <!-- Compiled and minified CSS -->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      Compiled and minified JavaScript 
@@ -15,25 +13,11 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    <div class="cursor" id="cursor"></div>
-    <div class="top-panel-container"  id="top-panel">
-      <div id="particles-js"></div>  
-      <div class="top-panel">
-        <h1>Yoann Masson</h1>
-        <h2>Développeur Full-Stack</h2>
-        <span class="opening-page-img"><img id="moi" src="../img/PHOTO_Rond.png"></span>
-      </div>
-    </div> 
-      
-    </div>
+   
 
     <div id="root"></div>
 
-    <div class="bottom-panel" id="bottom-panel">
-      <div class="info"><h2>Info1</h2></div>
-      <div class="info"><h2>Info2</h2></div>
-      <div class="info"><h2>Info3</h2></div>
-    </div>
+   <!-- -->
 
      <!-- Charge React -->
     <!-- Remarque : pour le déploiement, remplacez "development.js"
@@ -41,27 +25,9 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Charge notre composant React -->
-    <script src="js/main_panel.js"></script>
+    <!-- Charge notre composant React
+    <script src="bundle.js"></script>
     <script src="js/particles.min.js"></script>  
-    <script src="js/app.js"></script>  
-
-    <script>
-      let collapsible = ["top-panel","bottom-panel"];
-      //Any collapsible collapses all the other
-      document.body.addEventListener('click', hideCollapsible, true); 
-
-      function hideCollapsible() {
-        collapsible.map( collapsible => {
-          document.getElementById(collapsible).classList.add("hidden");
-        })
-      }
-
-      const cursor = document.getElementById('cursor');
-      document.addEventListener('mousemove', e => {
-        cursor.style.top = e.pageY + "px";
-        cursor.style.left = e .pageX + "px";
-      })
-    </script>
+    <script src="js/app.js"></script>   -->
   </body>
 </html>
