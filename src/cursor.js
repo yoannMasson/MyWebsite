@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import '../public/css/cursor.css';
-
+import '../public/css/cursor.scss';
+import classNames from 'classnames';
 
 // Composant visuelle qui remplace le curseur
-export default function Cursor() {
+export default function Cursor({glow}) {
 
     // Déplace le curseur avec la souris
     useEffect( () => {
@@ -14,5 +14,9 @@ export default function Cursor() {
         })
     })
 
-    return <div className="cursor" id="cursor"></div>
+    return <div className={classNames(
+        "cursor",
+        { "glow": glow }
+    )
+    } id="cursor"></div>
 }

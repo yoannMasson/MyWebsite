@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import photo from '../public/img/PHOTO_Rond.png';
-import '../public/css/collapsible.css';
-import '../public/css/particles.css';
+import '../public/css/collapsible.scss';
+import '../public/css/particles.scss';
 import Particles from 'react-particles-js';
 export default function CollapsiblePanel() {
 

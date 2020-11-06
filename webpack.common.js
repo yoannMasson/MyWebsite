@@ -16,7 +16,7 @@ module.exports = {
   }
   )],
   output: {
-    path: path.resolve(__dirname, './public/'),
+    path: path.resolve(__dirname, './public/dist/'),
     filename: 'bundle.js'
   },
   module: {
@@ -56,27 +56,15 @@ module.exports = {
       },
 
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'css/[name].css'
-            }
-          },
-          {
-            loader: 'extract-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'postcss-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,

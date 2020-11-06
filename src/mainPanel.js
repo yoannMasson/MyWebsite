@@ -6,6 +6,6 @@ export default function MainPanel() {
     const [activePanel, setActivePanel] = useState('moi');
 
     return (
-       <span>info</span> 
+       <div className="main_panel">info</div> 
     )
 }
