@@ -1,11 +1,14 @@
+import { useState } from "react"
 
 
 export default function SidebarLink({link, text, glowCursor}) {
 
-    return (
+    return (       
         <a href={link}
-        onMouseEnter={glowCursor(true)}
-        onMouseLeave={glowCursor(false)}>
-        <span className="nav-title">{text}</span></a>
+        onMouseEnter={e => glowCursor(true)}
+        onMouseLeave={e => glowCursor(false)}>
+        <span className="nav-title" >{text}</span></a> 
     )
+
+    
 }

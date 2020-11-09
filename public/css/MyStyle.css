@@ -9,6 +9,16 @@ body {
     cursor: none;
 }
 
+.root {
+    width: fit-content;
+    height: fit-content;
+}
+
+.app {
+    width: fit-content;
+    height: fit-content;
+}
+
 h1 {
     color: whitesmoke;
     font-family: 'Roboto';

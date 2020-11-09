@@ -3,19 +3,19 @@ import SidebarLink from './sidebar_link'
 
 export default function Sidebar({glowCursor}) {
 
-   const links = [["#","Mon parcours",glowCursor],
-    ["#","Services",glowCursor],
-    ["#","A propos & Contact",glowCursor],
-    ["#","Les tarifs",glowCursor]];
+   const links = [["#","Mon parcours"],
+    ["#","Services"],
+    ["#","A propos & Contact"],
+    ["#","Les tarifs"]];
+
     return (
         <div className="sidebar">
             { links.map((link, i) => {
-                console.log(link)
-                return <SidebarLink
+                return <SidebarLink     
                             key={i}
                             link={link[0]}
                             text={link[1]}
-                            glowCursor={() => glowCursor}                           
+                            glowCursor={glowCursor}                           
                             />
                 })
             }

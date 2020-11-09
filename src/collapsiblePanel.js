@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import photo from '../public/img/PHOTO_Rond.png';
 import '../public/css/collapsible.scss';
 import '../public/css/particles.scss';
