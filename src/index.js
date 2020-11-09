@@ -1,13 +1,11 @@
-import React from 'react';
+import App from './app';
 import ReactDOM from 'react-dom';
+import '../public/css/MyStyle.css';
+import '../public/css/nav.css';
 
-
-  function mainPanel() {
-    return <h1>Main Panel</h1>
-  }
   
   ReactDOM.render(
-    mainPanel(),
+    <App />,
     document.getElementById('root')
   );
   

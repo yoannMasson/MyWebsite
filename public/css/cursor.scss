@@ -7,10 +7,11 @@
     background-color: transparent;
     border: 3px solid black;
     transform: translate(-50%,-50%);
+    transition: height 0.3s ease, width 0.3s ease;
     pointer-events: none;
 }
 
-.cursor.active {
+.cursor.glow {
     height: 30px;
     width: 30px;
     border-color: #ff4e00;
