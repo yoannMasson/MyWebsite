@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../public/css/cursor.scss';
+import '../../public/css/cursor.scss';
 import classNames from 'classnames';
 
 // Composant visuelle qui remplace le curseur

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Cursor from './cursor';
-import CollapsiblePanel from './collapsiblePanel';
-import MainPanel from './mainPanel';
-import SideBar from './sidebar/sidebar';
+import Cursor from './cursor/cursor';
+import CollapsiblePanel from './app_layout/collapsiblePanel';
+import ReactDOM from 'react-dom';
+import ContentContainer from './app_layout/contentContainer';
 
 
 export default function App() {
@@ -15,10 +15,15 @@ export default function App() {
 
     return (
       <div className="app">
-        <SideBar glowCursor={glowCursor}/>
+        <ContentContainer glowCursor={glowCursor}/>
         <Cursor glow={cursorGlowing}/>
         <CollapsiblePanel/>
-        <MainPanel />
       </div>
     )
   }
+
+ 
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
