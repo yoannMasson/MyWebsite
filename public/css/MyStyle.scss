@@ -22,6 +22,11 @@ body {
     height: 100%;
 }
 
+.content-container {
+    width: 100%;
+    height: 100%;
+}
+
 h1 {
     color: whitesmoke;
     margin-bottom: 0;
@@ -43,15 +48,7 @@ h2 {
     background-color: red;
 }
 
-.info-panel {
-    position: relative;
-    left: 10%;
-    top: 10%;
-    width: 80%;
-    height: 80%;
-    background-color: $main_gray_transparent;
-    box-shadow: inset 0 0 1em gray;
-}
+
 
 
 

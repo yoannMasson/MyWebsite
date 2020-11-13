@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import '../../public/css/infoPanel.scss';
 
 export default function PanelInfo({startPosition}) {
 
@@ -6,6 +7,8 @@ export default function PanelInfo({startPosition}) {
         <div className= {classNames(
             "info-panel",
             startPosition
-        )}></div>
+        )}>
+            Bonjour, engagez le CHOU svp
+        </div>
     )
 }

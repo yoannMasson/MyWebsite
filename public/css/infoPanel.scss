@@ -1,0 +1,12 @@
+@import 'colors';
+
+.info-panel {
+    position: relative;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: $main_gray_transparent;
+    box-shadow: inset 0 0 1em gray;
+    color: white;
+}
