@@ -8,7 +8,7 @@ export default function PanelInfo({startPosition}) {
             "info-panel",
             startPosition
         )}>
-            Bonjour, engagez le CHOU svp
+            Bonjour, engagez moi svp
         </div>
     )
 }
