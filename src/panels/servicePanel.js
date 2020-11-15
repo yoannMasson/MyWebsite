@@ -1,14 +1,13 @@
 import classNames from 'classnames'
 import '../../public/css/infoPanel.scss';
 
-export default function PanelInfo({startPosition}) {
+export default function ServicePanel() {
 
     return (
         <div className= {classNames(
-            "info-panel",
-            startPosition
+            "info-panel"
         )}>
-            Bonjour, engagez moi svp
+            Site Web, freelance, massage
         </div>
     )
 }

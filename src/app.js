@@ -13,6 +13,7 @@ export default function App() {
       setCursorGlowing(bool);
     }
 
+   
     return (
       <div className="app">
         <ContentContainer glowCursor={glowCursor}/>

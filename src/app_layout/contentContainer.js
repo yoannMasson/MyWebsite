@@ -1,15 +1,25 @@
-import '../../public/css/sidebar.scss'
-import SidebarLink from '../sidebar/sidebar_link'
-import PanelInfo from '../panels/panelInfo'
+import { useState, useEffect } from 'react';
+import '../../public/css/sidebar.scss';
+import SidebarLink from '../sidebar/sidebar_link';
 import milkyWay from '../../public/img/workspace.jpeg';
+import ParcoursPanel from '../panels/parcoursPanel';
+import ContactPanel from '../panels/contactPanel';
+import ServicePanel from '../panels/servicePanel';
+import TarifPanel from '../panels/tarifPanel';
 
 
 export default function ContentContainer({glowCursor}) {
 
-   const links = [["#","Mon parcours","accessibility"],
-    ["#","Services"],
-    ["#","A propos & Contact"],
-    ["#","Les tarifs"]];
+   const links = [["#","Mon parcours","accessibility","parcours"],
+    ["#","Services","","service"],
+    ["#","A propos & Contact","","contact"],
+    ["#","Les tarifs","","tarif"]];
+
+    let [activePanel, setActivePanel] = useState("parcours");
+
+    const goToLink = (link) => {
+      setActivePanel(link)
+    }
 
     // Style for background image
     var sectionStyle = {
@@ -36,14 +46,18 @@ export default function ContentContainer({glowCursor}) {
                                 link={link[0]}
                                 text={link[1]}
                                 icon={link[2]}
-                                glowCursor={glowCursor}                           
+                                glowCursor={glowCursor}
+                                goToLink={() => goToLink(link[3])}                           
                                 />
                     })
                 }
             </div>
             <div className="main_panel" style={sectionStyle}>
-                <PanelInfo
-                    startPosition="center"/> 
+             { activePanel == "parcours" && <ParcoursPanel></ParcoursPanel>}
+             { activePanel == "service" && <ServicePanel></ServicePanel>}
+             { activePanel == "tarif" && <TarifPanel></TarifPanel>}
+             { activePanel == "contact" && <ContactPanel></ContactPanel>}
+                
                 
             </div> 
         </div>

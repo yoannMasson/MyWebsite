@@ -21,7 +21,7 @@ export default function CollapsiblePanel() {
 
     return  (
     <div className="collapsiblePanel">
-      <div className="top-panel-container"  id="top-panel">
+      <div className="top-panel-container hidden"  id="top-panel">
       <Particles params={param()}/>
 
         <div className="top-panel">
@@ -31,7 +31,7 @@ export default function CollapsiblePanel() {
         </div>
       </div> 
 
-      <div className="bottom-panel" id="bottom-panel">
+      <div className="bottom-panel hidden" id="bottom-panel">
         <div className="info"><h2>Info1</h2></div>
         <div className="info"><h2>Info2</h2></div>
         <div className="info"><h2>Info3</h2></div>
