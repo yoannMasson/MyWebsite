@@ -7,10 +7,12 @@ export default function TarifPanel() {
         <div className= {classNames(
             "info-panel"
         )}>
-            Bonjour,<br/>
+        <p>
+        Bonjour,<br/>
          TJM: 250€
          Site Vitrine: 800€
          Hebergement 20€/an
+        </p>
         </div>
     )
 }

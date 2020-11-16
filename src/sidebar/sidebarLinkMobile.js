@@ -1,10 +1,9 @@
-import { useState } from "react"
 
 
-export default function SidebarLink({link, text, icon, glowCursor, goToLink}) {
+export default function SidebarLink({text, icon, glowCursor, goToLink}) {
 
     return (       
-        <a href={link}
+        <a href="#"
         onMouseEnter={e => glowCursor(true)}
         onMouseLeave={e => glowCursor(false)}
         onClick={goToLink}>

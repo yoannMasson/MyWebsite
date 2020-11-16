@@ -7,8 +7,10 @@ export default function ContactPanel() {
         <div className= {classNames(
             "info-panel"
         )}>
-            <a href="mailto:yoann.masson95@mail.com">Mail</a>
+        <p>    
+        <a href="mailto:yoann.masson95@mail.com">Mail</a><br/>
             Tel: 07 79 80 09 94
+        </p>
         </div>
     )
 }

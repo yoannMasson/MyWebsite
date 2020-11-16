@@ -7,7 +7,9 @@ export default function ServicePanel() {
         <div className= {classNames(
             "info-panel"
         )}>
+            <p>
             Site Web, freelance, massage
+            </p>
         </div>
     )
 }

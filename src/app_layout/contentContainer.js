@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../../public/css/sidebar.scss';
-import SidebarLink from '../sidebar/sidebar_link';
+import SidebarLink from '../sidebar/sidebarLink';
 import milkyWay from '../../public/img/workspace.jpeg';
 import ParcoursPanel from '../panels/parcoursPanel';
 import ContactPanel from '../panels/contactPanel';
@@ -10,10 +10,14 @@ import TarifPanel from '../panels/tarifPanel';
 
 export default function ContentContainer({glowCursor}) {
 
-   const links = [["#","Mon parcours","accessibility","parcours"],
-    ["#","Services","","service"],
-    ["#","A propos & Contact","","contact"],
-    ["#","Les tarifs","","tarif"]];
+    //All info about links
+    //0: title
+    //1: name for icon of materialize
+    //2: name  for navigation
+    const links = [["Mon parcours","accessibility","parcours"],
+    ["Services","computer","service"],
+    ["A propos & Contact","phone","contact"],
+    ["Les tarifs","euro_symbol","tarif"]];
 
     let [activePanel, setActivePanel] = useState("parcours");
 
@@ -39,15 +43,27 @@ export default function ContentContainer({glowCursor}) {
                 </label>
                 <h3>Yoann <span>Masson</span></h3>
             </header>
+
+            <div className="mobile_nav">
+                { links.map((link, i) => {
+                        return <SidebarLink     
+                                    key={i}
+                                    text={link[0]}
+                                    icon={link[1]}
+                                    glowCursor={glowCursor}
+                                    goToLink={() => goToLink(link[2])}/>
+                                
+                        })
+                }
+            </div>
             <div className="sidebar">
                 { links.map((link, i) => {
                     return <SidebarLink     
                                 key={i}
-                                link={link[0]}
-                                text={link[1]}
-                                icon={link[2]}
+                                text={link[0]}
+                                icon={link[1]}
                                 glowCursor={glowCursor}
-                                goToLink={() => goToLink(link[3])}                           
+                                goToLink={() => goToLink(link[2])}                           
                                 />
                     })
                 }

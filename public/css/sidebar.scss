@@ -3,15 +3,16 @@
 .sidebar {
     background: $main_gray;
     padding-top: 30px;
-    margin-top: 70px;
+    margin-top: 54px;
     position: fixed;
     left: 0;
     top: 0;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 9%);
     cursor: none;
     pointer-events: all;
     transition: left 0.5s;
+    overflow-y: auto;
 
     a {
         cursor: none;
@@ -54,21 +55,26 @@
 
 .main_panel {
     margin-left: 250px;
-    padding-top: 70px;
+    padding-top: 54px;
     height: 100vh;
     transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: inherit;
 }
 
 #check_menu:checked ~ .main_panel {
     margin-left: 65px;
 }
 
-
 header {
+
     position: fixed;
     background-color: $main_gray;
-    padding: 20px;
-    width: 100%;
+    padding: 12px;
+    width: calc(100% - 0%);
     height: 30px;
 
     label #sidebar_btn {
@@ -100,3 +106,48 @@ header {
     }
 }
 
+/* Responsive CSS */
+.mobile_nav {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .sidebar {
+        display: none;
+    }
+
+    #sidebar_btn {
+        display: none;
+    }
+
+    .main_panel {
+        margin-left: 0;
+        width:100%;
+    }
+
+    .info-panel {
+        width: 100%;
+    }
+
+    .mobile_nav {
+        position: fixed;
+        top: 54px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        background-color: $second-gray;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        & a {
+            cursor: none;
+            color: #fff;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: background 0.5s;
+
+            span {
+                display: none;
+            }
+        }
+    }
+}

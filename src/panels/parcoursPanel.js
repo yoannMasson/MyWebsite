@@ -7,9 +7,11 @@ export default function ParcoursPanel() {
         <div className= {classNames(
             "info-panel"
         )}>
+        <p>
             Bonjour,<br/>
             Ingénieur, titulaire d'un double diplôme, je vous propose des développer votre site.<br/>
-            En tant qu'interlocuteur unique, je vous accompagnerai de la première version de votre site jusqu'à la maintenance.<br/>
+            En tant qu'interlocuteur unique, je vous accompagnerai de la première version de votre site jusqu'à la maintenance.En tant qu'interlocuteur unique, je vous accompagnerai de la première version de votre site jusqu'à la maintenance.<br/>
+        </p>
         </div>
     )
 }
