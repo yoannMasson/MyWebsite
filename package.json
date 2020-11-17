@@ -25,7 +25,8 @@
     "sass-extract-loader": "^1.1.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --mode development --config webpack.dev.js",
+    "start": "node server",
+    "dev": "webpack-dev-server --open --mode development --config webpack.dev.js",
     "build": "webpack --mode production --config webpack.prod.js",
     "watch": "webpack --watch -d"
   },
