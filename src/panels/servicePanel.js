@@ -8,7 +8,7 @@ export default function ServicePanel() {
             "info-panel"
         )}>
             <p>
-            Site Web, freelance, massage
+            Site Web, freelance
             </p>
         </div>
     )
